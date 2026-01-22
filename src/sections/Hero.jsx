@@ -21,10 +21,10 @@ export const Hero = () => {
             alt="Image de fond style github"
             className="w-full h-full object-cover opacity-40"
           />
-          <div
+          {/* <div POur bien voir la plateforme style repo github
             className="absolute inset-0 bg-linear-to-b
                          from-background/20 via-background/80 to-background "
-          />
+          /> */}
         </div>
         {/*Carré vert type repo github*/}
         <div className="absoute inset-0 overflow-hidden pointer-events-none">
