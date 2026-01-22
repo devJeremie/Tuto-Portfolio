@@ -3,6 +3,28 @@ import { ArrowRight, Download } from "lucide-react";
 import { AnimatedBorderButton } from "../components/AnimatedBorderButton";
 import { Github, Linkedin, Twitter } from "lucide-react";
 
+const skills = [
+    "JavaScript",
+    "React",
+    "React Native",
+    "Node.js",
+    "TypeScript",
+    "MongoDB",
+    "HTML5",
+    "CSS3",
+    "Tailwind CSS",
+    "Next.js",
+    "Express.js",
+    "Figma",
+    "Git",
+    "Docker",
+    "Github Actions",
+    "PostgreSQL",
+    "SQL",
+    "WordPress",
+    "PHP",
+];
+
 const positions = [...Array(20)].map(() => ({
     top: `${Math.random() * 100}%`,
     left: `${Math.random() * 100}%`,
@@ -44,101 +66,119 @@ export const Hero = () => {
         </div>
         {/*Contenu principal*/}
         <div className="container mx-auto px-6 pt-32 pb-20 relative z-10">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-                {/*Colonne de gauche contenu textuel*/}
-                <div className="space-y-8">
-                <div className="animate-fade-in">
-                    <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm text-primary">
-                    <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-                    Software
-                    </span>
-                </div>
-                {/*Titre principal*/}
-                <div className="space-y-4">
-                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight animate-fade-in animation-delay-100">
-                    Développeur{" "}
-                    <span className="text-primary glow-text">Fullstack</span>
-                    <br />
-                    passionné par le code
-                    <br />
-                    <span className="font-serif italic font-normal text-white">
-                        et les défis web'.
-                    </span>
-                    </h1>
-                    <p className="text-lg text-muted-foreground max-w-lg animate-fade-in animation-delay-600">
-                    Bonjour, je suis Jérémie Chabanais - Je conçois, développe et
-                    transmets ma passion du web et du code.
-                    </p>
-                </div>
-                {/*Bouton d'appel à l'action*/}
-                <div className="flex flex-wrap gap-4 animate-fade-in animation-delay-300">
-                    <Button
-                    href="#contact"
-                    size="lg"
-                    className="animate-fade-in animation-delay-800"
-                    >
-                    Contactez-moi <ArrowRight className="w-5 h-5" />
-                    </Button>
-                    <AnimatedBorderButton />
-                </div>
-                {/* Réseau sociaux */}
-                <div className="flex items-center gap-4 animate-fade-in animation-delay-400">
-                    <span className="text-sm text-muted-foreground">
-                    Suivez-moi :{" "}
-                    </span>
-                    {[
-                    { icon: Github, href: "https://github.com/devJeremie" },
-                    {
-                        icon: Linkedin,
-                        href: "https://www.linkedin.com/in/jeremie-chabanais/",
-                    },
-                    { icon: Twitter, href: "#" },
-                    ].map((social, i) => (
-                    <a
-                        key={i}
-                        href={social.href}
-                        className="p-2 rounded-full glass hover:bg-primary/10 hover:text-primary transition-all duration-300"
-                    >
-                        {<social.icon className="w-5 h-5" />}
-                    </a>
-                    ))}
-                </div>
-                </div>
-                {/*Colonne de droite image profil*/}
-                <div className="relative animate-fade-in animation-delay-300">
-                    {/* Image de profil */}
-                    <div className="relative max-w-md mx-auto">
-                        <div
-                        className="absolute inset-0 rounded-3xl bg-linear-to-br
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/*Colonne de gauche contenu textuel*/}
+            <div className="space-y-8">
+              <div className="animate-fade-in">
+                <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm text-primary">
+                  <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
+                  Software
+                </span>
+              </div>
+              {/*Titre principal*/}
+              <div className="space-y-4">
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight animate-fade-in animation-delay-100">
+                  Développeur{" "}
+                  <span className="text-primary glow-text">Fullstack</span>
+                  <br />
+                  passionné par le code
+                  <br />
+                  <span className="font-serif italic font-normal text-white">
+                    et les défis web'.
+                  </span>
+                </h1>
+                <p className="text-lg text-muted-foreground max-w-lg animate-fade-in animation-delay-600">
+                  Bonjour, je suis Jérémie Chabanais - Je conçois, développe et
+                  transmets ma passion du web et du code.
+                </p>
+              </div>
+              {/*Bouton d'appel à l'action*/}
+              <div className="flex flex-wrap gap-4 animate-fade-in animation-delay-300">
+                <Button
+                  href="#contact"
+                  size="lg"
+                  className="animate-fade-in animation-delay-800"
+                >
+                  Contactez-moi <ArrowRight className="w-5 h-5" />
+                </Button>
+                <AnimatedBorderButton />
+              </div>
+              {/* Réseau sociaux */}
+              <div className="flex items-center gap-4 animate-fade-in animation-delay-400">
+                <span className="text-sm text-muted-foreground">
+                  Suivez-moi :{" "}
+                </span>
+                {[
+                  { icon: Github, href: "https://github.com/devJeremie" },
+                  {
+                    icon: Linkedin,
+                    href: "https://www.linkedin.com/in/jeremie-chabanais/",
+                  },
+                  { icon: Twitter, href: "#" },
+                ].map((social, i) => (
+                  <a
+                    key={i}
+                    href={social.href}
+                    className="p-2 rounded-full glass hover:bg-primary/10 hover:text-primary transition-all duration-300"
+                  >
+                    {<social.icon className="w-5 h-5" />}
+                  </a>
+                ))}
+              </div>
+            </div>
+            {/*Colonne de droite image profil*/}
+            <div className="relative animate-fade-in animation-delay-300">
+              {/* Image de profil */}
+              <div className="relative max-w-md mx-auto">
+                <div
+                  className="absolute inset-0 rounded-3xl bg-linear-to-br
                                 from-primary/30 via-transparent to primary/10
                                 blur-2xl animate-pulse"
-                        />
-                        <div className="relative glass rounded-3xl p-2 glow-border">
-                        <img
-                            src="/BaldMan.jpg"
-                            alt="photo de profil"
-                            className="w-full aspect-[4/5] object-cover rounded-2xl"
-                        />
-                        {/*Bage flottant*/}
-                            <div className="absolute -bottom-4 -right-4 glass rounded-xl px-4 py-3 animate-float">
-                                <div className="flex items-center gap-3">
-                                <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
-                                <span className="text-sm font-medium">
-                                    Disponible pour de nouvelles opportunités
-                                </span>
-                                </div>
-                            </div>
-                            {/* Stats du badge */}
-                            <div className="
-                                absolute -top-4 -let-4 glass rounded-xl px-4 py-3 animate-float animation-delay-500"
-                            >
-                                <div className="">5+</div>
-                                <div className="">Années Exp.</div>
-                            </div>
-                        </div>
+                />
+                <div className="relative glass rounded-3xl p-2 glow-border">
+                  <img
+                    src="/BaldMan.jpg"
+                    alt="photo de profil"
+                    className="w-full aspect-[4/5] object-cover rounded-2xl"
+                  />
+                  {/*Bage flottant*/}
+                  <div className="absolute -bottom-4 -right-4 glass rounded-xl px-4 py-3 animate-float">
+                    <div className="flex items-center gap-3">
+                      <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
+                      <span className="text-sm font-medium">
+                        Disponible pour de nouvelles opportunités
+                      </span>
                     </div>
+                  </div>
+                  {/* Stats du badge */}
+                  <div
+                    className="
+                                absolute -top-4 -let-4 glass rounded-xl px-4 py-3 animate-float animation-delay-500"
+                  >
+                    <div className="text-2xl font-bold text-primary">5+</div>
+                    <div className=" text-xs text-muted-foreground">
+                      Années Exp.
+                    </div>
+                  </div>
                 </div>
+              </div>
             </div>
+          </div>
+          {/* Technologies */}
+          <div className="mt-20 animate-fade-in animation-delay-600">
+            <p className="text-sm text-muted-foreground mb-6 text-center">
+                Technologie pratiqués
+            </p>
+            <div >
+              <div>
+                {[...skills, ...skills].map((skill, id) => (
+                <div key={id}>
+                    <span>{skill}</span>
+                </div>
+              ))}
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     );
