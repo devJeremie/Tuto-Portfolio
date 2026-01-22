@@ -1,5 +1,5 @@
 import { Button } from "@/components/button";
-import { ArrowRight, Download } from "lucide-react";
+import { ArrowRight, ChevronDown, Download } from "lucide-react";
 import { AnimatedBorderButton } from "../components/AnimatedBorderButton";
 import { Github, Linkedin, Twitter } from "lucide-react";
 
@@ -169,16 +169,30 @@ export const Hero = () => {
             <p className="text-sm text-muted-foreground mb-6 text-center">
                 Technologie pratiqués
             </p>
-            <div >
-              <div>
+            <div className="relative overflow-hidden">
+              <div className="flex animate-marquee">
                 {[...skills, ...skills].map((skill, id) => (
-                <div key={id}>
-                    <span>{skill}</span>
+                <div key={id} className="shrink-0 px-8 py-4 ">
+                    <span className="text-xl font-semibold text-muted-foreground/50 hover:text-secondary-foreground transition-colors">
+                        {skill}
+                    </span>
                 </div>
               ))}
               </div>
             </div>
           </div>
+        </div>
+        {/*scroll*/}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 
+                        animate-fade-in animation-delay-800">
+            <a 
+                href="#about"
+                className="flex flex-col items-center gap-2 text-secondary-foreground
+                           hover:text-primary transition-colors"
+            >
+                <span className="text-xs uppercase tracking-wider">Scroll</span>
+                <ChevronDown className="w-6 h-6 animate-bounce" />
+            </a>
         </div>
       </section>
     );
