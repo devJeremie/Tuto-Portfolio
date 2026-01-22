@@ -4,6 +4,7 @@ import { AnimatedBorderButton } from "../components/AnimatedBorderButton";
 import { Github, Linkedin, Twitter } from "lucide-react";
 
 const skills = [
+    "IA",
     "JavaScript",
     "React",
     "React Native",
