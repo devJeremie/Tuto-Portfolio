@@ -88,13 +88,22 @@ export const Projects = () => {
           {/*Projet avec grid */}
           <div className="grid md:grid-cols-2 gap-8">
             {projects.map((project, id) => (
-              <div key={id} className="group glass rounded-2xl overflow-hidden animate-fade-in md:row-span-1">
+              <div
+                key={id}
+                className="group glass rounded-2xl overflow-hidden animate-fade-in md:row-span-1"
+                style={{ animationDelay: `${id + 1 * 100}ms` }}
+              >
                 {/*Image des projets*/}
-                <div>
-                    <img 
-                        src={project.image} alt={project.title}
-                        className="w-full h-full object-cover transition-transform duration-700"   
-                    />
+                <div className="relative overflow-hidden aspect-video">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  <div
+                    className="absolute inset-0 bg-linear-to-t from-card via-card/50
+                               to-transparent opacity-60"
+                  />
                 </div>
               </div>
             ))}
