@@ -1,3 +1,6 @@
+import { ArrowUpRight, Github } from "lucide-react";
+import { AnimatedBorderButton} from "@/components/AnimatedBorderButton";
+
 const projects = [
   {
     title: "Portfolio",
@@ -104,9 +107,62 @@ export const Projects = () => {
                     className="absolute inset-0 bg-linear-to-t from-card via-card/50
                                to-transparent opacity-60"
                   />
+                  {/* Liens overlay*/}
+                  <div
+                    className="absolute inset-0 flex items-center justify-center gap-4
+                                  opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  >
+                    <a
+                      href={project.link}
+                      className="p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground 
+                      transition-all "
+                    >
+                      <ArrowUpRight className="w-5 h-5" />
+                    </a>
+                    <a
+                      href={project.github}
+                      className="p-3 rounded-full glass hover:bg-primary  hover:text-primary-foreground 
+                      transition-all "
+                    >
+                      <Github className="w-5 h-5" />
+                    </a>
+                  </div>
+                </div>
+                {/* Contenu */}
+                <div className="p-6 space-y-4 ">
+                  <div className="flex items-start justify-between">
+                    <h3 className="text-xl font-semibold group-hover:text-primary transition-colors">
+                      {project.title}
+                    </h3>
+                    <ArrowUpRight 
+                      className="w-5 h-5 text-muted-foreground group-hover:text-primary
+                                 group-hover:translate-x-1 group-hover:translate-y-1 transition-all" 
+                    />
+                  </div>
+                  <p className="text-muted-foreground text-sm">
+                    {project.description}
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {project.tags.map((tag, tagId) => (
+                      <span 
+                        key={tagId}
+                        className="px-4 py-1.5 rounded-full bg-surface text-xs font-medium border
+                                      border-border/50 text-muted-foreground hover:border-primary/50
+                                      hover:text-primary transition-all duration-300">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
             ))}
+          </div>
+          {/* Vue de tout les projets*/}
+          <div className="text-center mt-12 animate-fade-in animation-delay-500">
+            <AnimatedBorderButton>
+              Voir tous les projets
+              <ArrowUpRight className="w-5 h-5" />
+            </AnimatedBorderButton>
           </div>
         </div>
       </section>
