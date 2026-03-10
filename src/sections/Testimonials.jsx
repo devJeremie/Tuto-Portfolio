@@ -1,4 +1,5 @@
-import { Quote } from "lucide-react";
+import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
+import { useState } from "react";
 
 const testimonials = [
   {
@@ -36,6 +37,16 @@ const testimonials = [
 ];
 
 export const Testimonials = () => {
+  const [ activeId, setActiveId] = useState(0);
+
+  const next = () => {
+    setActiveId((prev) => (prev + 1) % testimonials.length);
+  }
+  
+  const previous = () => {
+    setActiveId((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+  };
+
     return (
       <section id="testimonials" className="py-32 relative overflow-hidden">
         <div
@@ -59,24 +70,63 @@ export const Testimonials = () => {
             </h2>
           </div>
           {/*Caroussel témoignages*/}
-          <div>
-            <div>
+          <div className="max-w-4xl mx-auto">
+            <div className="relative">
               {/*Main témoignages*/}
-              <div>
-                <div>
-                  <Quote />
+              <div className="glass p-8 rounded-3xl md:p-12 glow-border animate-fade-in animation-delay-200">
+                <div
+                  className="absolute -top-4 left-8 w-12 h-12 rounded-full
+                              bg-primary flex items-center justify-center"
+                >
+                  <Quote className="w-6 h-6 text-primary-foreground" />
                 </div>
-                <blockquote>"{testimonials[0].quote}"</blockquote>
-                <div>
+                <blockquote className="text-xl md:text-2xl font-medium leading-relaxed mb-8 pt-4">
+                  "{testimonials[activeId].quote}"
+                </blockquote>
+                <div className="flex items-center gap-4">
                   <img
-                    src={testimonials[0].avatar}
-                    alt={testimonials[0].avatar}
+                    src={testimonials[activeId].avatar}
+                    alt={testimonials[activeId].avatar}
+                    className="w-14 h-14 rounded-full object-cover ring-2 ring-primary/20"
                   />
                   <div>
-                    <div>{testimonials[0].author}</div>
-                    <div>{testimonials[0].role}</div>
+                    <div className="font-semibold">
+                      {testimonials[activeId].author}
+                    </div>
+                    <div className="text-sm text-muted-foreground">
+                      {testimonials[activeId].role}
+                    </div>
                   </div>
                 </div>
+              </div>
+              {/*Navigation témoignages*/}
+              <div className="flex items-center justify-center gap-4 mt-8">
+                <button
+                  className="p-3 rounded-full glass hover:bg-primary/10 hover:text-primary 
+                                   transition-all"
+                  onClick={previous}
+                >
+                  <ChevronLeft />
+                </button>
+                <div className="flex gap-2">
+                  {testimonials.map((_, id) => (
+                    <button
+                      onClick={() => setActiveId(id)}
+                      className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                        id === activeId
+                          ? "w-8 bg-primary"
+                          : "bg-muted-foreground/30 hover:bg-muted-foreground/50"
+                      }`}
+                    />
+                  ))}
+                </div>
+                <button
+                  className="p-3 rounded-full glass hover:bg-primary/10 hover:text-primary 
+                                   transition-all"
+                  onClick={next}
+                >
+                  <ChevronRight />
+                </button>
               </div>
             </div>
           </div>
