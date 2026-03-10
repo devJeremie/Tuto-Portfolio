@@ -1,3 +1,5 @@
+import { Quote } from "lucide-react";
+
 const testimonials = [
   {
     quote:
@@ -35,24 +37,50 @@ const testimonials = [
 
 export const Testimonials = () => {
     return (
-        <section id="testimonials" className="py-32 relative overflow-hidden">
-            <div className="absolute top-1/2 left-1/2 w-[800px] h-[800px]
+      <section id="testimonials" className="py-32 relative overflow-hidden">
+        <div
+          className="absolute top-1/2 left-1/2 w-[800px] h-[800px]
                             bg-primary/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"
-            />
-            <div className="container mx-auto px-6 relative z-10">
-                {/*Header section*/}
-                <div className="text-center max-w-3xl mx-auto mb-16">
-                    <span className="text-secondary-foreground text-sm font-medium tracking-wider uppercase animate-fade-in">
-                        Ce qu'ils disent de moi
-                    </span>
-                    <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6 animate-fade-in 
+        />
+        <div className="container mx-auto px-6 relative z-10">
+          {/*Header section*/}
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="text-secondary-foreground text-sm font-medium tracking-wider uppercase animate-fade-in">
+              Ce qu'ils disent de moi
+            </span>
+            <h2
+              className="text-4xl md:text-5xl font-bold mt-4 mb-6 animate-fade-in 
                                    animation-delay-100 text-secondary-foreground"
-                    >
-                        Des témoignages de 
-                    </h2>
-                    <span>clients et partenaires satisfaits</span>
+            >
+              Des témoignages de{" "}
+              <span className="font-serif italic font-normal text-white">
+                clients et partenaires satisfaits
+              </span>
+            </h2>
+          </div>
+          {/*Caroussel témoignages*/}
+          <div>
+            <div>
+              {/*Main témoignages*/}
+              <div>
+                <div>
+                  <Quote />
                 </div>
+                <blockquote>"{testimonials[0].quote}"</blockquote>
+                <div>
+                  <img
+                    src={testimonials[0].avatar}
+                    alt={testimonials[0].avatar}
+                  />
+                  <div>
+                    <div>{testimonials[0].author}</div>
+                    <div>{testimonials[0].role}</div>
+                  </div>
+                </div>
+              </div>
             </div>
-        </section>
+          </div>
+        </div>
+      </section>
     );
 }
