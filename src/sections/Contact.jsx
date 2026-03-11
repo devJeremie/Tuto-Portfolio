@@ -20,15 +20,5 @@ const contactInfo = [
 ];
 
 export const Contact = () => {
-        href: 
-    },
-      {
-        icon: 
-        label: 
-        value: 
-        href: 
-    },
-
-export const Contact = () => {
     return <section></section>;
 }
