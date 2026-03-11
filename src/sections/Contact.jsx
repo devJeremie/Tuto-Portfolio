@@ -1,3 +1,5 @@
+import {Mail, Phone, Location} from "lucide-react";
+
 const contactInfo = [
     {
         icon: Mail,
@@ -20,5 +22,87 @@ const contactInfo = [
 ];
 
 export const Contact = () => {
-    return <section></section>;
+    return (
+      <section id="contact" className="py-32 relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-full">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
+          <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-highlight/5 rounded-full blur-3xl" />
+        </div>
+        <div className="container mx-auto px-6 relative z-10 ">
+          {/*Section header*/}
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="text-secondary-foreground text-sm font-medium ">
+              Une idée,
+            </span>
+            <h2 className="text-4-xl md:text-5xl font-bold mt-4 mb-6 animate-fade-in animation-delay-200">
+              un projet,{" "}
+              <span className="font-serif italic font-normal text-white">
+                ecrivons la suite ensemble !
+              </span>
+            </h2>
+            <p className="text-muted-foreground animate-fade-in animation-delay/200">
+              Vous avez un projet, une formation et vous chercher votre
+              formateur. J'aimerais beaucoup parler de cela avec vous,
+              Envoyez-moi un message et je vous recontacterai, afin de
+              travailler ensemble.
+            </p>
+          </div>
+          {/*Formulaire*/}
+          <div className="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
+            <div className="glass p-8 rounded-3xl border border-primary/30 animate-fade-in animation-delay-300">
+              <form className="space-y-6">
+                <div>
+                  <label
+                    htmlFor="name"
+                    className="block text-sm font-medium mb-2 "
+                  >
+                    Nom
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    required
+                    placeholder="Votre nom.."
+                    className="w-full px-4 py-3 bg-surface rounded-xl border border-border transition-all 
+                                    focus:border-primary focus:ring-1 focus:ring-primary outline-none"
+                  />
+                </div>
+                <div>
+                  <label
+                    htmlFor="email"
+                    className="block text-sm font-medium mb-2 "
+                  >
+                    Email
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    required
+                    placeholder="votre@email.com"
+                    className="w-full px-4 py-3 bg-surface rounded-xl border border-border transition-all 
+                                    focus:border-primary focus:ring-1 focus:ring-primary outline-none"
+                  />
+                </div>
+                <div>
+                  <label
+                    htmlFor="message"
+                    className="block text-sm font-medium mb-2 "
+                  >
+                    Message
+                  </label>
+                  <textarea
+                    rows={5}
+                    required
+                    placeholder="Votre message.."
+                    className="w-full px-4 py-3 bg-surface rounded-xl border border-border transition-all 
+                                    focus:border-primary focus:ring-1 focus:ring-primary outline-none
+                                    resize-none"
+                  />
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    );
 }
