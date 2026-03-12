@@ -3,15 +3,22 @@ import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 
 const navLinks = [
-    { href: "#about", label: "A propos" },
-    { href: "#projects", label: "Projets" },
-    { href: "#experience", label: "Experience" },
-    { href: "#testimonials", label: "Testimonials" },
-]
+  { href: "#about", label: "A propos" },
+  { href: "#projects", label: "Projets" },
+  { href: "#experience", label: "Experience" },
+  { href: "#testimonials", label: "Testimonials" },
+  { href: "#contact", label: "Contact" },
+];
 
 export const Navbar = () => {
     const [isMobileMenuOpen , setIsMobileMenuOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
+
+    const scrollToContact = () => {
+      document.querySelector("#contact")?.scrollIntoView({ 
+        behavior: "smooth" 
+      });
+    };
 
     useEffect(() => {
         const handleScroll = () => {
@@ -53,7 +60,9 @@ export const Navbar = () => {
           </div>
           {/*CTA Button*/}
           <div className="hidden md:block">
-            <Button size="sm">Contactez-moi</Button>
+            <Button size="sm" onClick={scrollToContact}>
+              Contactez-moi
+            </Button>
           </div>
           {/* Mobile Nav Button - Hamburger Menu */}
           <button
@@ -77,7 +86,13 @@ export const Navbar = () => {
                         {link.label}
                     </a>
                 ))}
-                <Button onClick={() => setIsMobileMenuOpen(false)}>
+                <Button 
+                  href="#contact"
+                  onClick={() => {
+                    setIsMobileMenuOpen(false);
+                    scrollToContact();
+                  }}
+                >
                     Contactez-moi
                 </Button>
             </div>
