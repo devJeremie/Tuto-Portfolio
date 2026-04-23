@@ -1,7 +1,7 @@
 import { Button } from "../components/Button";
 import { ArrowRight, ChevronDown, Download } from "lucide-react";
 import { AnimatedBorderButton } from "../components/AnimatedBorderButton";
-import { Github, Linkedin, Twitter } from "lucide-react";
+import { FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6";
 
 const skills = [
     "IA",
@@ -113,12 +113,12 @@ export const Hero = () => {
                   Suivez-moi :{" "}
                 </span>
                 {[
-                  { icon: Github, href: "https://github.com/devJeremie" },
+                  { icon: FaGithub, href: "https://github.com/devJeremie" },
                   {
-                    icon: Linkedin,
+                    icon: FaLinkedin,
                     href: "https://www.linkedin.com/in/jeremie-chabanais/",
                   },
-                  { icon: Twitter, href: "#" },
+                  { icon: FaXTwitter, href: "#" },
                 ].map((social, i) => (
                   <a
                     key={i}
