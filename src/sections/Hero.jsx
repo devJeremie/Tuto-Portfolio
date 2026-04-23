@@ -85,7 +85,7 @@ export const Hero = () => {
                   passionné par le code
                   <br />
                   <span className="font-serif italic font-normal text-white">
-                    et les défis web'.
+                    et les défis web.
                   </span>
                 </h1>
                 <p className="text-lg text-muted-foreground max-w-lg animate-fade-in animation-delay-600">
