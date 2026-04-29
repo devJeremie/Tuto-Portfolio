@@ -12,7 +12,7 @@ const contactInfo = [
     },
     {
         icon: Phone,
-        label: "Tèl",
+        label: "Tél",
         value: "+33 6 34 26 31 10",
         href: "tel:+33634263110"
     },
