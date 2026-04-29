@@ -5,15 +5,7 @@ const experiences = [
     company: "AFPA Bègles",
     description:
       "Chargé de réaliser des applications mobiles pour les journeés portes ouvertes, ainsi que pour la partie restauration.",
-    technologies: [
-      "Php",
-      "Symfony",
-      "React",
-      "React Native",
-      "Typescript",
-      "Javascript",
-      "IA",
-    ],
+    technologies: ["Php","Symfony", "React","React Native", "Typescript","Javascript","IA"],
     current: true,
   },
   {
