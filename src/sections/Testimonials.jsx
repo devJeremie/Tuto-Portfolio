@@ -42,7 +42,6 @@ export const Testimonials = () => {
   const next = () => {
     setActiveId((prev) => (prev + 1) % testimonials.length);
   }
-  
   const previous = () => {
     setActiveId((prev) => (prev - 1 + testimonials.length) % testimonials.length);
   };
