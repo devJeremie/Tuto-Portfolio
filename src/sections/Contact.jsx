@@ -35,7 +35,6 @@ export const Contact = () => {
         type: null, 
         message: "",
     });
-
     const handleSubmit = async (e) => {
         e.preventDefault();
 
@@ -46,7 +45,6 @@ export const Contact = () => {
             const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
             const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
             
-
             if (!serviceId || !templateId || !publicKey) {
                 throw new Error(
                     "EmailJS configuration is incomplete. Please check your evironment variables"
